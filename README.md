@@ -14,3 +14,10 @@ Please, find below an image of the top section of the webpage.
 Furthermore, here is an image of the calendar with the calendar entries. 
 <img width="944" height="504" alt="image" src="https://github.com/user-attachments/assets/506b61f0-0cdd-4c4f-89d4-52c21d0ef475" />
  
+## 💻 Tech Stack  
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+
+## 🌐 Socials:
+[![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:joyadelegan1@gmail.com) 
