@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+	<div class="calendar-container">
+		
+	<!-- Logo area -->
+      <header class="calendar-logo">
+        <i class="fa-solid fa-book" style="grid-area: box-1;"></i>
+		<p style="grid-area: box-2;">LUT University</p>
+      </header>
+	<!-- Navigation bar to different areas-->
+      <nav class="calendar-nav">
+        <p>SISU</p>
+        <p>Structure of studies</p>
+        <p>Timeline</p>
+        <p>Registration</p>
+        <p>Study calender</p>
+        <p>My profile</p>
+        <p>Search</p>
+		<p></p>
+		<i class="fa-regular fa-envelope"></i>
+		<i class="fa-solid fa-list"></i>
+		<i class="fa-solid fa-question"></i>
+		<i class="fa-regular fa-star"></i>
+		<p>Joy Adelegan</p>
+      </nav>
+		<main class="calendar-main">
+		<!-- Website navigatory hierarcy-->
+			<nav class="calendar-breadcrumb">
+			<a href="/">Home</a>
+			>
+			<a href="/">Study Calender</a>
+			>
+			<a href="/">Registration</a>
+			</nav>
+		<!-- Main header section-->
+			<div class="calendar-main-content">
+				<header class="calender-main-header">
+					<h1 style="grid-area:calender-main-header-box-1;">Study calender</h1>
+					<button style="grid-area:calender-main-header-box-2;">ADD A NOTE</button>
+					<button style="grid-area:calender-main-header-box-3;">EXPORT IN EXTERNAL CALENDER</button>
+				</header>
+			<!-- Filter cancelled events-->
+				<section>
+					<div class="calender-main-checkbox">
+							<input type="checkbox"> 
+							<label>Hide cancelled events</label>
+					</div>
+				<!-- Navigation bar for calender-->
+					<div class="calender-main-nav">
+							<button style="grid-area:calender-main-nav-box-1;">TODAY</button>
+							<button style="grid-area:calender-main-nav-box-2;"><</button>
+							<button style="grid-area:calender-main-nav-box-3;">></button>
+							<h2 style="grid-area:calender-main-nav-box-4;">17.-24.6.2024</h2>
+							<button style="grid-area:calender-main-nav-box-5;">WEEK</button>
+							<button style="grid-area:calender-main-nav-box-6;">MONTH</button>
+					</div>
+				
+				</section>
+			<!-- Calender content-->
+				<section class="calender-main-content">
+				
+					<div class="weekdays">
+					
+						<div>wk 25</div>
+						<div>Mon 17.6.</div>
+						<div>Tue 18.6.</div>
+						<div>Wed 19.6.</div>
+						<div>Thu 20.6.</div>
+						<div>Fri 21.6.</div>
+						<div>Sat 22.6.</div>
+						<div>Sun 23.6.</div>
+						
+					</div>
+					
+					<div class="calender"></div>	
+				
+				</section>
+		
+			</div>
+		</main>
+	</div>
+	<style>
+	/* Calender page structure*/
+		.calendar-container{
+			display: grid;
+			grid-template-rows: repeat(4, auto)
+		}
+		
+	/* Calender logo column*/
+		.calendar-logo{
+			align-items: center;
+			display: grid;
+			grid-gap: 1em;
+			grid-template-columns: repeat(2, max-content) 1fr;
+			grid-template-areas: "box-1 box-2 .";
+			padding: 0.65rem 1rem;			
+		}
+	
+	/* Calender nav column*/
+		.calendar-nav{
+			align-items: center;
+			background-color: rgb(56,56,56);
+			color: rgb(255,255,255);
+			display: grid;
+			grid-gap: 40px;
+			grid-template-columns: 3rem repeat(6, minmax(max-content, 1fr)) 1fr repeat(4, max-content) 7rem;
+			grid-template-rows: auto;
+			overflow: hidden;
+			padding: 0.65rem 1rem;
+			
+		}
+		.calendar-nav p:nth-child(1){
+			border-right: 1px solid #ccc;
+			line-height: 1.2;
+			padding-right: 0.5rem;
+		}
+		.calendar-nav i{
+			background-color: rgb(128,128,128);
+			border-radius: 10rem;
+			color: rgb(255,255,255);
+			padding: 0.3rem;
+		}
+		
+	/* Calender breadcrumb column*/
+		.calendar-breadcrumb{
+			display: grid;
+			grid-template-columns: repeat(5, max-content);
+			grid-gap: 1em;
+			padding: 0.65rem 1rem;
+		}
+		
+	/* Calender heading*/
+		.calender-main-header{
+			align-items:center;
+			display: grid;
+			grid-gap: 1em;
+			grid-template-columns: max-content 1fr repeat(2, max-content);
+			grid-template-areas: "calender-main-header-box-1 . calender-main-header-box-2 calender-main-header-box-3";
+		}
+		
+		/* Button structure*/
+		
+		button{
+			background-color: white;
+			border: 2px solid blue;
+			color: blue;
+			padding: 0.65rem 1rem;
+			transition: transform 0.25s ease-in;
+		}
+		button:hover{	
+			transform: scale(1.2);
+		}
+		
+		/* Calender filter*/
+		.calender-main-checkbox{
+			text-align: end;
+		}
+		
+		/* Calender navigation structure*/
+		
+		.calender-main-nav{
+			align-items: center;
+			display: grid;
+			gap: 10px;
+			grid-template-columns: repeat(4, max-content) 1fr repeat(2, max-content);
+			grid-template-areas: "calender-main-nav-box-1 calender-main-nav-box-2 calender-main-nav-box-3 calender-main-nav-box-4 . calender-main-nav-box-5 calender-main-nav-box-6";
+			padding: 1rem;
+		}
+		.calender-main-nav h2{
+			display: inline;
+		}
+		.calender-main-content{
+			display: grid;
+			grid-template-rows: repeat(2, auto); 
+			grid-auto-rows: 20px;
+		}
+		
+		/* Weekday row structure*/
+		.weekdays{
+			background-color: white;
+			border-bottom: 2px solid rgb(214, 210, 210);
+			display: grid;
+			grid-template-columns: 50px repeat(7, minmax(50px,1fr)); 
+			position: -webkit-sticky;
+			position: sticky;
+			text-align:center;
+			top: 0;
+			z-index: 1;
+		}
+		
+		/* Calender structure*/
+		.calender{
+			display: grid;
+			grid-template-columns: 50px repeat(7, minmax(50px,1fr)); 
+			grid-auto-rows: 8rem;
+			text-align:center;
+		}
+		.calender div{
+			border: 1px solid rgb(214, 210, 210);
+		}
+		
+	</style>
+	<script>
+		/* Set structure for each the hour column*/
+			const calender = document.getElementsByClassName("calender")[0];
+			let hr = 6;
+			
+			for (let i = 0; i<17; i++){
+		
+			let calender_hr = document.createElement("p");
+			let calender_hr_div = document.createElement("div");
+			
+			calender_hr.innerText =`${hr}.00`;
+			
+			/* Set CSS for each the hour column*/
+			calender_hr_div.cssText = `
+			
+				background-color: white;
+				border-right: 2px solid solid rgb(214, 210, 210);
+				grid-area: ${i + 1} / 1 / ${i + 2} / 2;
+				left: 0;
+				text-align: center;
+				position: -webkit-sticky;
+				position: sticky;
+			`;
+			
+			hr++;
+			
+			calender_hr_div.appendChild(calender_hr);
+			calender.appendChild(calender_hr_div);
+			calender.appendChild(document.createElement("div"));
+			
+			for (let j = 0; j<6; j++){
+			
+				let scedule_block = document.createElement("div");
+				
+				scedule_block.style.gridArea = `${i+1}/${j+2}/${i+2}/${j+3}`;
+				scedule_block.style.padding = "0.5rem";
+				
+				calender.appendChild(scedule_block );
+				
+			}
+			
+		}
+		/* Set structure for class  entry*/
+		function add_class(weekday,start_time,end_time, class_name, classroom, bkground_color, content_color){
+			const calender_entry = document.createElement("div");
+			const weekday_col = weekday_col_index(weekday);
+			
+			let [start_hr,start_min]  = start_time.split(":").map(Number);
+			let [end_hr,end_min]  = end_time.split(":").map(Number);
+			
+			/* Set calender entry size*/
+			const duration =  (end_hr * 60 + end_min) - (start_hr * 60 + start_min);
+			const box_height = (duration/60)*8;
+			const offset_start = (start_min/60)*8;;
+			
+			/* Html  inside the calender entry*/
+			calender_entry.innerHTML =`
+				<nav style="display: grid;grid-template-columns:1fr auto;align-items:center;font-size: clamp(0.75rem, 0.75rem, 1rem);">
+					<p>${start_time}-${end_time}</p>
+					<span style="display: grid;grid-template-columns:min-content min-content;align-items:center;">
+					<i class="fas fa-map-marker-alt"></i>
+					<span>${classroom}</span>
+					</span>
+				</nav>
+				<nav style="display: grid;grid-template-columns:auto auto;align-items:center;font-size:0.75rem;">
+					<p>${class_name}</p>
+				</nav>
+			`
+			/* CSS code for the calender entry*/
+			calender_entry.style.cssText = `
+				display: grid;
+				grid-template-rows: min-content min-content;
+				grid-area: ${start_hr-5}/${weekday_col}/${end_hr-4}/${weekday_col + 1};
+				background-color: ${bkground_color};
+				color: ${content_color};
+				border-left: 5px solid ${content_color};
+				border-radius: 0 10px 10px 0;
+				overflow: hidden;
+				margin-right: 0.5rem;
+				margin-top: ${offset_start}rem;
+				height: ${box_height}rem;
+			`;
+			
+			calender.appendChild(calender_entry);
+		}
+		
+		// Find column for weekday
+		function weekday_col_index(weekday){
+			if (weekday == "monday") return 2;
+			if (weekday == "tuesday")return 3;
+			if (weekday == "wednesday") return 4;
+			if (weekday == "thursday") return 5;
+			if (weekday == "friday") return 6;
+			if (weekday == "saturday") return 7;
+			if (weekday == "sunday")return 8;
+		}
+		
+		// Add classes to calender
+		add_class("monday", "8:00", "9:30", "Physics: Quantum Mechanics", "L104", "rgba(96, 156, 211, 0.40)", "rgb(67, 124, 178)");
+		add_class("monday", "10:00", "11:15", "English: Modern Literature", "B302", "rgba(211, 182, 96, 0.40)", "rgb(178, 149, 67)");
+		add_class("tuesday", "9:00", "10:30", "Chemistry: Organic Synthesis", "S202", "rgba(148, 211, 96, 0.40)", "rgb(117, 178, 67)");
+		add_class("tuesday", "13:00", "14:30", "Economics: Macro Trends", "E401", "rgba(159, 96, 211, 0.40)", "rgb(128, 67, 178)");
+		add_class("wednesday", "8:15", "9:45", "Biology: Genetics", "L110", "rgba(96, 211, 201, 0.40)", "rgb(67, 178, 168)");
+		add_class("wednesday", "11:00", "12:30", "Philosophy: Ethics 101", "A105", "rgba(211, 126, 96, 0.40)", "rgb(178, 93, 67)");
+		add_class("thursday", "10:30", "12:00", "Computer Science: Data Structures", "C220", "rgba(118, 118, 118, 0.40)", "rgb(80, 80, 80)");
+		add_class("thursday", "14:00", "15:30", "Art History: The Renaissance", "V102", "rgba(211, 96, 115, 0.40)", "rgb(178, 67, 85)");
+		add_class("friday", "8:30", "10:00", "Psychology: Behavioral Science", "B215", "rgba(182, 211, 96, 0.40)", "rgb(149, 178, 67)");
+		add_class("friday", "11:45", "13:15", "Political Science: Global Relations", "D303", "rgba(96, 106, 211, 0.40)", "rgb(67, 77, 178)");
+
+	</script>
+</body>
+
+</html>
