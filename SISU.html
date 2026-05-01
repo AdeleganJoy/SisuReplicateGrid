@@ -213,15 +213,16 @@
 			const calender = document.getElementsByClassName("calender")[0];
 			let hr = 6;
 			
+			/* Creat 17 rows (6:00 - 22:00)*/
 			for (let i = 0; i<17; i++){
 		
+			/*Make the label for hrs*/
 			let calender_hr = document.createElement("p");
 			let calender_hr_div = document.createElement("div");
-			
 			calender_hr.innerText =`${hr}.00`;
 			
 			/* Set CSS for each the hour column*/
-			calender_hr_div.cssText = `
+			calender_hr_div.style.cssText = `
 			
 				background-color: white;
 				border-right: 2px solid solid rgb(214, 210, 210);
@@ -236,15 +237,12 @@
 			
 			calender_hr_div.appendChild(calender_hr);
 			calender.appendChild(calender_hr_div);
-			calender.appendChild(document.createElement("div"));
 			
-			for (let j = 0; j<6; j++){
-			
+			/* Creat 7 columns for each day of the week (Monday - Sunday)*/
+			for (let j = 0; j<7; j++){
 				let scedule_block = document.createElement("div");
-				
 				scedule_block.style.gridArea = `${i+1}/${j+2}/${i+2}/${j+3}`;
 				scedule_block.style.padding = "0.5rem";
-				
 				calender.appendChild(scedule_block );
 				
 			}
@@ -254,6 +252,8 @@
 		function add_class(weekday,start_time,end_time, class_name, classroom, bkground_color, content_color){
 			const calender_entry = document.createElement("div");
 			const weekday_col = weekday_col_index(weekday);
+			
+			if (weekday_col == 0) return 0;
 			
 			let [start_hr,start_min]  = start_time.split(":").map(Number);
 			let [end_hr,end_min]  = end_time.split(":").map(Number);
@@ -292,20 +292,25 @@
 			`;
 			
 			calender.appendChild(calender_entry);
+			return 1;
 		}
 		
-		// Find column for weekday
+		// Find column index for weekday
 		function weekday_col_index(weekday){
-			if (weekday == "monday") return 2;
-			if (weekday == "tuesday")return 3;
-			if (weekday == "wednesday") return 4;
-			if (weekday == "thursday") return 5;
-			if (weekday == "friday") return 6;
-			if (weekday == "saturday") return 7;
-			if (weekday == "sunday")return 8;
+			let weekday_lower_case = weekday.toLowerCase();
+			if (weekday_lower_case == "monday") return 2;
+			if (weekday_lower_case == "tuesday")return 3;
+			if (weekday_lower_case == "wednesday") return 4;
+			if (weekday_lower_case == "thursday") return 5;
+			if (weekday_lower_case == "friday") return 6;
+			if (weekday_lower_case == "saturday") return 7;
+			if (weekday_lower_case == "sunday")return 8;
+			
+			return 0;
 		}
 		
 		// Add classes to calender
+		add_class("sunday", "11:45", "13:15", "Political Science: Global Relations", "D303", "rgba(96, 106, 211, 0.40)", "rgb(67, 77, 178)");
 		add_class("monday", "8:00", "9:30", "Physics: Quantum Mechanics", "L104", "rgba(96, 156, 211, 0.40)", "rgb(67, 124, 178)");
 		add_class("monday", "10:00", "11:15", "English: Modern Literature", "B302", "rgba(211, 182, 96, 0.40)", "rgb(178, 149, 67)");
 		add_class("tuesday", "9:00", "10:30", "Chemistry: Organic Synthesis", "S202", "rgba(148, 211, 96, 0.40)", "rgb(117, 178, 67)");
@@ -314,9 +319,8 @@
 		add_class("wednesday", "11:00", "12:30", "Philosophy: Ethics 101", "A105", "rgba(211, 126, 96, 0.40)", "rgb(178, 93, 67)");
 		add_class("thursday", "10:30", "12:00", "Computer Science: Data Structures", "C220", "rgba(118, 118, 118, 0.40)", "rgb(80, 80, 80)");
 		add_class("thursday", "14:00", "15:30", "Art History: The Renaissance", "V102", "rgba(211, 96, 115, 0.40)", "rgb(178, 67, 85)");
-		add_class("friday", "8:30", "10:00", "Psychology: Behavioral Science", "B215", "rgba(182, 211, 96, 0.40)", "rgb(149, 178, 67)");
+		add_class("saturday", "8:30", "10:00", "Psychology: Behavioral Science", "B215", "rgba(182, 211, 96, 0.40)", "rgb(149, 178, 67)");
 		add_class("friday", "11:45", "13:15", "Political Science: Global Relations", "D303", "rgba(96, 106, 211, 0.40)", "rgb(67, 77, 178)");
-
 	</script>
 </body>
 
